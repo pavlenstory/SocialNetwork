@@ -1,0 +1,10 @@
+import './App.css';
+import React from "react";
+
+const App = () => {
+    return (
+        <div className={"App"}>Hello world</div>
+    )
+}
+
+export default App;
