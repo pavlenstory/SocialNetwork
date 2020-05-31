@@ -1,15 +1,14 @@
-import React from "react";
-import s from "./Profile.module.css"
-import MyPosts from "./MyPosts/MyPosts";
+import React from "react"
+import MyPosts from "./MyPosts/MyPosts"
+import ProfileInfo from "./ProfileInfro/ProfileInfo"
+import {updateNewPostText} from "../../Redux/store";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
-        <div className={s.Profile}>
-            <div>
-                ava + description
-            </div>
-            <MyPosts/>
-        </div>
+        <>
+            <ProfileInfo/>
+            <MyPosts state={props.state} dispatch={props.dispatch}/>
+        </>
     )
 }
 

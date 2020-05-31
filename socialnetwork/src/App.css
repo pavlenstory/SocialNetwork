@@ -2,4 +2,8 @@
   margin: 0 auto;
   width: 1200px
 }
-
+.AppCentralContent {
+  float: left;
+  width: 900px;
+  background-color: #1a53a1;
+}

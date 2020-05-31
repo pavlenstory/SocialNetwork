@@ -1,10 +1,11 @@
 import React from "react";
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div>
-            <dvi>post</dvi>
+            <div>{props.post}</div>
             <div>like</div>
+            <div>{props.likesCount}</div>
         </div>
     )
 }

@@ -1,6 +1,12 @@
 .NavBar {
-    background-color: green;
+    background-color: #222325;
     float: left;
     width: 300px;
-    color: white
+}
+.NavBarItem a{
+    color: white;
+    text-decoration: none;
+}
+.NavBarItem a.active {
+    color: #6b69d6;
 }
