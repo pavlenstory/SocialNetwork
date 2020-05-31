@@ -1,13 +1,12 @@
 import React from "react"
-import MyPosts from "./MyPosts/MyPosts"
 import ProfileInfo from "./ProfileInfro/ProfileInfo"
-import {updateNewPostText} from "../../Redux/store";
+import MyPostsContainer from "./MyPosts/MyPostsContainer"
 
 const Profile = (props) => {
     return (
         <>
             <ProfileInfo/>
-            <MyPosts state={props.state} dispatch={props.dispatch}/>
+            <MyPostsContainer state={props.state} store={props.store}/>
         </>
     )
 }

@@ -2,22 +2,23 @@ import React from "react"
 import s from "./Dialogs.module.css"
 import DialogsUsers from "./DialogUser/DialogsUsers"
 import DialogsMessages from "./DialogMessages/DialogsMessages"
-import {addMessageAC, updateNewMessageTextAC} from "../../Redux/dialogsReducer";
 
 
 const Dialogs = (props) => {
 
     let dialogsElements = props.state.dialogsPage.users.map((u) => <DialogsUsers name={u.name} id={u.id} key={u.id}/>)
-    let dialogsMessages = props.state.dialogsPage.messages.map((m) => <DialogsMessages message={m.message} id={m.id} key={m.id}/>)
+    let dialogsMessages = props.state.dialogsPage.messages.map((m) => <DialogsMessages message={m.message} id={m.id}
+                                                                                       key={m.id}/>)
 
     let sendMessage = () => {
-        props.dispatch(addMessageAC())
+        props.sendMessage();
     }
 
     let onMessageChange = (e) => {
         let newText = e.target.value;
-        props.dispatch(updateNewMessageTextAC(newText))
+        props.onMessageChange(newText);
     }
+
     return (
         <>
             <div className={s.DialogsUsers}>
