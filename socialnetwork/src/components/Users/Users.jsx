@@ -1,77 +1,42 @@
-import React from "react"
+import * as React from "react";
+import photoAvatar from "../../assets/photoAvatar.png";
+import * as axios from "axios";
 
 
-const UsersContainer = (props) => {
+class Users extends React.Component {
 
-    if(props.users.length === 0 ) {
-        props.setUsers([
-                {
-                    id: 1,
-                    photoUrl: undefined,
-                    followed: true,
-                    fullName: "Pavel",
-                    status: 'This is status',
-                    location: {city: "Minsk", country: "Belarus"}
-                },
-                {
-                    id: 2,
-                    photoUrl: undefined,
-                    followed: true,
-                    fullName: "Pavel",
-                    status: 'This is status',
-                    location: {city: "Minsk", country: "Belarus"}
-                },
-                {
-                    id: 3,
-                    photoUrl: undefined,
-                    followed: false,
-                    fullName: "Pavel",
-                    status: 'This is status',
-                    location: {city: "Minsk", country: "Belarus"}
-                },
-                {
-                    id: 4,
-                    photoUrl: undefined,
-                    followed: false,
-                    fullName: "Pavel",
-                    status: 'This is status',
-                    location: {city: "Minsk", country: "Belarus"}
-                },
-        ])
+
+    componentDidMount() {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            });
     }
-    return (
-        <div>
-            {
-                props.users.map(u => <div key={u.id}>
 
+    render() {
+        return <div>
+            {
+                this.props.users.map(u => <div key={u.id}>
                     <span>
-                        <div>Тут картинка</div>
+                        <div><img src={u.photos.small != null ? u.photos.small : photoAvatar}/></div>
                     </span>
 
                     <span>
                         <div>
-                            <div>{u.fullName}</div><div>{u.status}</div>
-                        </div>
-                        <div>
-                            <div>
-                                {u.location.country}
-                            </div>
-                            <div>
-                                 {u.location.city}
-                            </div>
+                            <div>{u.name}</div><div>{u.status}</div>
                         </div>
                     </span>
 
                     <span>
                         {u.followed ?
-                            <button onClick={() => props.follow(u.id)}>follow</button>
-                            : <button onClick={() => props.unFollow(u.id)}>unFollow</button>}
+                            <button onClick={() => this.props.follow(u.id)}>follow</button>
+                            : <button onClick={() => this.props.unFollow(u.id)}>unFollow</button>}
                     </span>
 
                 </div>)
             }
         </div>
-    )
+    }
 }
 
-export default UsersContainer;
+export default Users
