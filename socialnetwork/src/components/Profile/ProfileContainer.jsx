@@ -10,7 +10,7 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = 2;
         }
-        getUserProfile(userId)
+        this.props.getUserProfile(userId)
     }
 
     render() {
