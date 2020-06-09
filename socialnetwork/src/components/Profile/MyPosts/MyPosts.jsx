@@ -1,27 +1,20 @@
 import React from "react"
 import Post from "./Post/Post"
+import {MyPostsReduxForm} from "./MyPostsForm/MyPostsForm";
 
 
 const MyPosts = (props) => {
     let postsElements = props.posts.map((p) => <Post post={p.post} likesCount={p.likesCount}
                                                                        key={p.id}/>)
 
-    let addPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = (e) => {
-        let newText = e.target.value;
-        props.updatePost(newText)
+    let onSubmit = (formData) => {
+        props.addPost(formData.postArea)
     }
 
     return (
         <div>
             My Posts
-            <div>
-                <textarea onChange={onPostChange} value={props.newPostText}/>
-                <button onClick={addPost}>Add post</button>
-            </div>
+            <MyPostsReduxForm onSubmit={onSubmit}/>
             <div>
                 {postsElements}
             </div>
