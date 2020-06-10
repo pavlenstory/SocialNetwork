@@ -6,10 +6,11 @@ import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
+
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = 6440;
+            userId = this.props.authorizedUserId;
         }
         this.props.getUserProfile(userId);
         this.props.getUserStatus(userId);
@@ -22,8 +23,10 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
+    authorizedUserId: state.auth.id,
     userProfile: state.profilePage.userProfile,
     userStatus: state.profilePage.userStatus,
+    isAuth: state.auth.isAuth,
 });
 
 export default compose(withRouter, connect(mapStateToProps, {getUserProfile, getUserStatus, updateUserStatus}))(ProfileContainer);
