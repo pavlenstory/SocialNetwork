@@ -1,25 +1,28 @@
-import React from "react"
+import React, {Component} from "react"
 import Post from "./Post/Post"
 import {MyPostsReduxForm} from "./MyPostsForm/MyPostsForm";
 
 
-const MyPosts = (props) => {
-    let postsElements = props.posts.map((p) => <Post post={p.post} likesCount={p.likesCount}
-                                                                       key={p.id}/>)
+class MyPosts extends Component {
+    render() {
+        let postsElements = this.props.posts.map((p) => <Post post={p.post}
+                                                              likesCount={p.likesCount}
+                                                              key={p.id}/>)
+        let onSubmit = (formData) => {
+            this.props.addPost(formData.postArea)
+        }
 
-    let onSubmit = (formData) => {
-        props.addPost(formData.postArea)
-    }
+        return (
 
-    return (
-        <div>
-            My Posts
-            <MyPostsReduxForm onSubmit={onSubmit}/>
             <div>
-                {postsElements}
+                My Posts
+                <MyPostsReduxForm onSubmit={onSubmit}/>
+                <div>
+                    {postsElements}
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default MyPosts;

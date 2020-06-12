@@ -1,12 +1,11 @@
-import React from "react"
+import React, {Component} from "react"
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {getUserProfile, getUserStatus, updateUserStatus} from "../../Redux/profileReducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 
-class ProfileContainer extends React.Component {
-
+class ProfileContainer extends Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
