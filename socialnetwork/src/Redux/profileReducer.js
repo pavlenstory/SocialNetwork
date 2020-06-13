@@ -1,10 +1,9 @@
 import {profileAPI} from "../api/api";
 
-
-const ADD_POST = "ADD_POST";
-const SET_USER_PROFILE = "SET_USER_PROFILE";
-const SET_USER_STATUS = "SET_USER_STATUS";
-const DELETE_POST = "DELETE_POST";
+const ADD_POST = "profileReducer/ADD_POST";
+const SET_USER_PROFILE = "profileReducer/SET_USER_PROFILE";
+const SET_USER_STATUS = "profileReducer/SET_USER_STATUS";
+const DELETE_POST = "profileReducer/DELETE_POST";
 
 let initialState = {
     posts: [
@@ -53,30 +52,24 @@ const profileReducer = (state = initialState, action) => {
 export const addPost = (newPostText) => ({type: ADD_POST, newPostText});
 export const deletePost = (postId) => ({type: DELETE_POST, postId});
 
-
 const setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile});
-export const getUserProfile = (userId) => (dispatch) => {
-    profileAPI.getProfile(userId)
-        .then(response => {
-            dispatch(setUserProfile(response.data));
-        });
-}
-
 const setStatus = (userStatus) => ({type: SET_USER_STATUS, userStatus});
-export const getUserStatus = (userId) => (dispatch) => {
-    profileAPI.getStatus(userId)
-        .then(response => {
-            dispatch(setStatus(response.data))
-        })
+
+export const getUserProfile = (userId) => async (dispatch) => {
+    let response = await profileAPI.getProfile(userId);
+    dispatch(setUserProfile(response.data));
+};
+
+export const getUserStatus = (userId) => async (dispatch) => {
+    let response = await profileAPI.getStatus(userId);
+    dispatch(setStatus(response.data));
 }
 
-export const updateUserStatus = (userStatus) => (dispatch) => {
-    profileAPI.updateStatus(userStatus)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(setStatus(userStatus))
-            }
-        })
+export const updateUserStatus = (userStatus) => async (dispatch) => {
+    let response = await profileAPI.updateStatus(userStatus);
+    if (response.data.resultCode === 0) {
+        dispatch(setStatus(userStatus))
+    }
 }
 
 export default profileReducer

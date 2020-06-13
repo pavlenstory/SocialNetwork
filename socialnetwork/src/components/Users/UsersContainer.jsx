@@ -6,7 +6,7 @@ import Preloader from "../Preloader/Preloader";
 import {compose} from "redux";
 import {
     getCurrentPage,
-    getFollowingInProgress,
+    getFollowingInProgress, getIsFetching,
     getPageSize,
     getTotalUsersCount,
     getUsers,
@@ -52,6 +52,7 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
+        isFetching: getIsFetching(state),
         users: getUsers(state),
         pageSize: getPageSize(state),
         totalUsersCount: getTotalUsersCount(state),

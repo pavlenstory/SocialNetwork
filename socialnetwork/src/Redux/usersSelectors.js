@@ -15,6 +15,10 @@ const getCurrentPageSelector = (state) => {
 const getFollowingInProgressSelector = (state) => {
     return state.usersPage.followingInProgress
 }
+const getIsFetchingSelector = (state) => {
+    return state.usersPage.isFetching
+}
+
 
 export const getUsers = createSelector(getUsersSelector, (users) => {
     return users.filter(u => true)
@@ -29,7 +33,9 @@ export const getCurrentPage = createSelector(getCurrentPageSelector, (e) => {
     return e
 })
 export const getFollowingInProgress = createSelector(getFollowingInProgressSelector, (e) => {
-    debugger
+    return e
+})
+export const getIsFetching = createSelector(getIsFetchingSelector, (e) => {
     return e
 })
 
