@@ -2,11 +2,11 @@ import React from "react"
 import {NavLink} from "react-router-dom"
 
 
-const DialogsUsers = (props) => {
-    let path = "/dialogs/" + props.id;
+const DialogsUsers = ({id, name}) => {
+    let path = "/dialogs/" + id;
     return (
         <div>
-            <NavLink to={path}>{props.name}</NavLink>
+            <NavLink to={path}>{name}</NavLink>
         </div>
     )
 }

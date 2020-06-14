@@ -3,11 +3,10 @@ import s from "./Users.module.css";
 import photoAvatar from "../../assets/photoAvatar.png";
 import {NavLink} from "react-router-dom";
 
-let Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+let Users = ({totalUsersCount, pageSize, onPageChanged, currentPage, users, followingInProgress, getUnFollow, getFollow}) => {
 
+    let pagesCount = Math.ceil(totalUsersCount / pageSize);
     let pages = [];
-
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
@@ -17,12 +16,12 @@ let Users = (props) => {
             {pages.map(p => {
                 return <span
                     key={p}
-                    onClick={() => props.onPageChanged(p)}
-                    className={props.currentPage === p ? s.selectedPage : undefined}>{p}</span>
+                    onClick={() => onPageChanged(p)}
+                    className={currentPage === p ? s.selectedPage : undefined}>{p}</span>
             })}
         </div>
         {
-            props.users.map(u => <div key={u.id}>
+            users.map(u => <div key={u.id}>
                     <span>
                         <NavLink to={'/profile/' + u.id}>
                             <img src={u.photos.small != null ? u.photos.small : photoAvatar} alt={u.name}/>
@@ -37,14 +36,14 @@ let Users = (props) => {
 
                 <span>
                         {u.followed ?
-                            <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                props.getUnFollow(u.id)
+                            <button disabled={followingInProgress.some(id => id === u.id)} onClick={() => {
+                                getUnFollow(u.id)
                             }
                             }>unFollow</button>
 
-                            : <button disabled={props.followingInProgress.some(id =>
+                            : <button disabled={followingInProgress.some(id =>
                                 id === u.id)} onClick={() => {
-                                props.getFollow(u.id)
+                                getFollow(u.id)
                             }
                             }>follow</button>
                         }

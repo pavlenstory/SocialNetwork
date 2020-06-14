@@ -4,15 +4,14 @@ import DialogsUsers from "./DialogUser/DialogsUsers"
 import DialogsMessages from "./DialogMessages/DialogsMessages"
 import {DialogsReduxForm} from "./DialogsForm/DialogsForm";
 
+const Dialogs = ({users, messages, addMessage}) => {
 
-const Dialogs = (props) => {
-
-    let dialogsElements = props.users.map((u) => <DialogsUsers name={u.name} id={u.id} key={u.id}/>)
-    let dialogsMessages = props.messages.map((m) => <DialogsMessages message={m.message} id={m.id}
+    let dialogsElements = users.map((u) => <DialogsUsers name={u.name} id={u.id} key={u.id}/>)
+    let dialogsMessages = messages.map((m) => <DialogsMessages message={m.message} id={m.id}
                                                                                        key={m.id}/>)
 
     let onSubmit = (formData) => {
-        props.addMessage(formData.messageArea)
+        addMessage(formData.messageArea)
     }
 
     return (

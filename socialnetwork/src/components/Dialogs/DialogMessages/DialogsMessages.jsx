@@ -1,10 +1,10 @@
 import React from "react"
 
 
-const DialogsMessages = (props) => {
+const DialogsMessages = ({message}) => {
     return (
         <>
-            <div>{props.message}</div>
+            <div>{message}</div>
         </>
     )
 }

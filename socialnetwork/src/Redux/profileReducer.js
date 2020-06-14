@@ -14,7 +14,6 @@ let initialState = {
     userStatus: "",
 }
 
-
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
@@ -51,7 +50,6 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPost = (newPostText) => ({type: ADD_POST, newPostText});
 export const deletePost = (postId) => ({type: DELETE_POST, postId});
-
 const setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile});
 const setStatus = (userStatus) => ({type: SET_USER_STATUS, userStatus});
 
