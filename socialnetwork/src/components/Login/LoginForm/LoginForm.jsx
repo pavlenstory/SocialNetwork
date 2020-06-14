@@ -1,8 +1,8 @@
 import React from "react"
 import {reduxForm} from "redux-form";
-import {createField, Input} from "../../../FormsControls/FormsControls";
+import {createField, Input} from "../../common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validatos";
-import s from "../../../FormsControls/FormsControls.module.css";
+import s from "../../common/FormsControls/FormsControls.module.css";
 
 const maxLength20 = maxLengthCreator(20);
 

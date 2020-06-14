@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import {getUnFollow, getFollow, requestUsers} from "../../Redux/usersReducer";
 import * as React from "react";
 import Users from "./Users";
-import Preloader from "../Preloader/Preloader";
+import Preloader from "../common/Preloader/Preloader";
 import {compose} from "redux";
 import {
     getCurrentPage,
@@ -15,11 +15,13 @@ import {
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize)
+        const {currentPage, pageSize} = this.props;
+        this.props.getUsers(currentPage, pageSize)
     }
 
     onPageChanged = (p) => {
-        this.props.getUsers(p, this.props.pageSize)
+        const {pageSize} = this.props;
+        this.props.getUsers(p, pageSize)
     }
 
     render() {
@@ -39,16 +41,6 @@ class UsersContainer extends React.Component {
         </>
     }
 }
-
-/*let mapStateToProps = (state) => {
-    return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        followingInProgress: state.usersPage.followingInProgress,
-    }
-}*/
 
 let mapStateToProps = (state) => {
     return {
