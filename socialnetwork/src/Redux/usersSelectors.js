@@ -18,6 +18,9 @@ const getFollowingInProgressSelector = (state) => {
 const getIsFetchingSelector = (state) => {
     return state.usersPage.isFetching
 }
+const getPortionSizeSelector = (state) => {
+    return state.usersPage.portionSize
+}
 
 
 export const getUsers = createSelector(getUsersSelector, (users) => {
@@ -38,4 +41,6 @@ export const getFollowingInProgress = createSelector(getFollowingInProgressSelec
 export const getIsFetching = createSelector(getIsFetchingSelector, (e) => {
     return e
 })
-
+export const getPortionSize = createSelector(getPortionSizeSelector, (e) => {
+    return e
+})
