@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import s from "./Paginator.module.css";
 
-
 let Paginator = ({portionSize, totalUsersCount, pageSize, onPageChanged, currentPage}) => {
 
     let pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -11,10 +10,10 @@ let Paginator = ({portionSize, totalUsersCount, pageSize, onPageChanged, current
         pages.push(i)
     }
 
-    let portionCount = Math.ceil(pagesCount / portionSize);//сколько у нас блоков
-    let [portionNumber, setPortionNumber] = useState(1);//текущая страница и как ее менять
-    let starterPortionNumber = (portionNumber - 1) * portionSize + 1;//первый элемент страницы
-    let finishedPortionNumber = portionNumber * portionSize;//последний элемент страницы
+    let portionCount = Math.ceil(pagesCount / portionSize);
+    let [portionNumber, setPortionNumber] = useState(1);
+    let starterPortionNumber = (portionNumber - 1) * portionSize + 1;
+    let finishedPortionNumber = portionNumber * portionSize;
 
     return (
         <div>
