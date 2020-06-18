@@ -5,7 +5,7 @@ import photoAvatar from "./../../../assets/photoAvatar.png"
 import {ProfileDataReduxForm} from "./ProfileDataForm/ProfileDataForm";
 
 
-const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePhoto}) => {
+const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePhoto, updateProfile}) => {
 
     let [editMode, setEditMode] = useState(false);
 
@@ -18,6 +18,13 @@ const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePh
         }
     }
 
+    let AddNewProfileInformation = (formData) => {
+        /*updateProfile(formData).then(() => {
+            setEditMode(false);
+        })*/
+        updateProfile(formData);
+        setEditMode(false);
+    }
     return (
         <>
             <div>
@@ -26,7 +33,8 @@ const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePh
                 {isOwner ? <input type={"file"} onChange={onPhotoSelected}/> : undefined}
             </div>
             {editMode
-                ? <ProfileDataReduxForm userProfile={userProfile}/>
+                ? <ProfileDataReduxForm initialValues={userProfile} userProfile={userProfile}
+                                        onSubmit={AddNewProfileInformation}/>
                 : <ProfileData userProfile={userProfile} isOwner={isOwner} setEditMode={setEditMode}/>}
             <ProfileStatusWithHooks userStatus={userStatus} updateUserStatus={updateUserStatus}/>
         </>
@@ -38,7 +46,10 @@ const ProfileData = ({userProfile, isOwner, setEditMode}) => {
         <div>
             <div>
                 {isOwner && <div>
-                    <button onClick={() => {setEditMode(true)}}>edit</button>
+                    <button onClick={() => {
+                        setEditMode(true)
+                    }}>edit
+                    </button>
                 </div>}
             </div>
             <div>
@@ -48,7 +59,7 @@ const ProfileData = ({userProfile, isOwner, setEditMode}) => {
                 <div>Looking for a job: {userProfile.lookingForAJob ? "Yes" : "No"}</div>
             </div>
             <div>
-                <div>Looking for a job description: {userProfile.lookingForAJobDescription}</div>
+                <div>Skills: {userProfile.lookingForAJobDescription}</div>
             </div>
             <div>
                 <div>About me: {userProfile.aboutMe}</div>
@@ -65,7 +76,7 @@ const ProfileData = ({userProfile, isOwner, setEditMode}) => {
 }
 
 const Contact = ({contactTitle, contactValue}) => {
-    return <div key={contactTitle}>
+    return <div>
         <div>{contactTitle} :</div>
         <div>{contactValue}</div>
     </div>
