@@ -13,7 +13,7 @@ const ProfileDataForm = ({handleSubmit, userProfile, error}) => {
         <form onSubmit={handleSubmit}>
             <div>
                 Full name: {createField("Full name", Input,
-                "fullName", [required, maxLength20], {}, "", "hahahahah")}
+                "fullName", [required, maxLength20], {}, "")}
             </div>
             <div>
                 {createField(null, Input, "lookingForAJob", null,

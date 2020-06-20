@@ -5,6 +5,7 @@ const SET_USER_PROFILE = "profileReducer/SET_USER_PROFILE";
 const SET_USER_STATUS = "profileReducer/SET_USER_STATUS";
 const DELETE_POST = "profileReducer/DELETE_POST";
 const SAVE_PHOTO_SUCCESS = "profileReducer/SAVE_PHOTO_SUCCESS";
+const SET_VALUE_PROFILE_EDIT_MODE = "profileReducer/SET_VALUE_PROFILE_EDIT_MODE";
 
 
 let initialState = {
@@ -14,6 +15,7 @@ let initialState = {
     ],
     userProfile: null,
     userStatus: "",
+    profileInfoEditMode: false,
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -51,6 +53,12 @@ const profileReducer = (state = initialState, action) => {
                 userProfile: {...state.userProfile, photos: action.photos}
             }
         }
+        case SET_VALUE_PROFILE_EDIT_MODE: {
+            return {
+                ...state,
+                profileInfoEditMode: action.isEditMode
+            }
+        }
         default:
             return state
     }
@@ -61,6 +69,7 @@ export const deletePost = (postId) => ({type: DELETE_POST, postId});
 const setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile});
 const setStatus = (userStatus) => ({type: SET_USER_STATUS, userStatus});
 const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
+const setValueProfileEditMode = (isEditMode) => ({type: SET_VALUE_PROFILE_EDIT_MODE, isEditMode});
 
 export const getUserProfile = (userId) => async (dispatch) => {
     let response = await profileAPI.getProfile(userId);
@@ -90,13 +99,18 @@ export const updateProfile = (profileData) => async (dispatch, getState) => {
     const myId = getState().auth.id;
     let response = await profileAPI.updateProfile(profileData);
     if (response.data.resultCode === 0) {
-        dispatch(getUserProfile(myId))
+        dispatch(getUserProfile(myId));
+        dispatch(setValueProfileEditMode(false))
     } else {
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
-        let correctContact = (message.substr(30, message.length - 2).toLowerCase());
-        console.log(correctContact);
-        dispatch(stopSubmit("editProfile", {contacts: {"facebook": {message} }}));
-        //return Promise.reject()
+        let correctContact = (message.slice(30, message.length - 1).toLowerCase());
+
+        let arr = {};
+        let b = {};
+        arr[correctContact] = message;
+        b["contacts"] = arr;
+
+        dispatch(stopSubmit("editProfile", b));
     }
 }
 

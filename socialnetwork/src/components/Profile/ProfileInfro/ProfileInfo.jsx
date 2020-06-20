@@ -5,9 +5,9 @@ import photoAvatar from "./../../../assets/photoAvatar.png"
 import {ProfileDataReduxForm} from "./ProfileDataForm/ProfileDataForm";
 
 
-const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePhoto, updateProfile}) => {
+const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePhoto, updateProfile, profileInfoEditMode}) => {
 
-    let [editMode, setEditMode] = useState(false);
+    let [editMode, setEditMode] = useState(profileInfoEditMode);
 
     if (!userProfile) {
         return <Preloader/>
@@ -19,11 +19,7 @@ const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePh
     }
 
     let AddNewProfileInformation = (formData) => {
-        /*updateProfile(formData).then(() => {
-            setEditMode(false);
-        })*/
-        updateProfile(formData);
-        setEditMode(false);
+        updateProfile(formData)
     }
     return (
         <>

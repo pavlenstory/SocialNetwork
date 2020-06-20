@@ -4,6 +4,12 @@ import {connect} from "react-redux";
 import {getUserProfile, getUserStatus, savePhoto, updateProfile, updateUserStatus} from "../../Redux/profileReducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
+import {
+    getAuthorizedUserId,
+    getIsAuth,
+    getProfileInfoEditMode, getUserProfileSel,
+    getUserStatusSel
+} from "../../Selectors/profileSelectors";
 
 class ProfileContainer extends Component {
 
@@ -39,10 +45,11 @@ class ProfileContainer extends Component {
 }
 
 let mapStateToProps = (state) => ({
-    userProfile: state.profilePage.userProfile,
-    userStatus: state.profilePage.userStatus,
-    authorizedUserId: state.auth.id,
-    isAuth: state.auth.isAuth,
+    userProfile: getUserProfileSel(state),
+    userStatus: getUserStatusSel(state),
+    authorizedUserId: getAuthorizedUserId(state),
+    isAuth: getIsAuth(state),
+    profileInfoEditMode: getProfileInfoEditMode(state),
 });
 
 export default compose(withRouter, connect(mapStateToProps, {
