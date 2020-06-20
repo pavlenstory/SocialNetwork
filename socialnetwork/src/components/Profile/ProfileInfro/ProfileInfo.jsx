@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import photoAvatar from "./../../../assets/photoAvatar.png"
@@ -6,8 +6,11 @@ import {ProfileDataReduxForm} from "./ProfileDataForm/ProfileDataForm";
 
 
 const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePhoto, updateProfile, profileInfoEditMode}) => {
-
+    debugger;
     let [editMode, setEditMode] = useState(profileInfoEditMode);
+    useEffect( () => {
+        setEditMode(false)
+    }, [profileInfoEditMode]);
 
     if (!userProfile) {
         return <Preloader/>
