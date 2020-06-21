@@ -6,8 +6,9 @@ import {ProfileDataReduxForm} from "./ProfileDataForm/ProfileDataForm";
 
 
 const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePhoto, updateProfile, profileInfoEditMode}) => {
-    debugger;
-    let [editMode, setEditMode] = useState(profileInfoEditMode);
+
+    let [editMode, setEditMode] = useState(false);
+
     useEffect( () => {
         setEditMode(false)
     }, [profileInfoEditMode]);

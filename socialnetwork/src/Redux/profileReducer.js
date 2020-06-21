@@ -100,7 +100,6 @@ export const updateProfile = (profileData) => async (dispatch, getState) => {
     let response = await profileAPI.updateProfile(profileData);
     if (response.data.resultCode === 0) {
         dispatch(getUserProfile(myId));
-        debugger;
         dispatch(setValueProfileEditMode(true))
     } else {
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
