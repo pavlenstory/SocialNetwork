@@ -19,13 +19,17 @@ import {withSuspense} from "./hoc/withSuspense";
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 
 class App extends Component {
-
+    catchAllUnhandledErrors = (reason, promise) => {
+        alert(reason.reason.message)
+    }
 
     componentDidMount() {
         this.props.initializeApp();
-
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
-
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+    }
 
 
     render() {
