@@ -1,7 +1,7 @@
 import './App.css'
 import React, {Component} from "react"
 import NavBar from "./components/NavBar/NavBar"
-import {HashRouter, Route, withRouter} from "react-router-dom"
+import {HashRouter, Redirect, Route, Switch, withRouter} from "react-router-dom"
 import News from "./components/News/News"
 import Music from "./components/Music/Music"
 import Settings from "./components/Settings/Settings"
@@ -32,13 +32,17 @@ class App extends Component {
                 <HeaderContainer/>
                 <NavBar/>
                 <div className={"AppCentralContent"}>
-                    <Route path="/profile/:userId?" component={ProfileContainer}/>
-                    <Route path="/dialogs" render={withSuspense(DialogsContainer)}/>
-                    <Route path="/users" component={UsersContainer}/>
-                    <Route path="/news" component={News}/>
-                    <Route path="/music" component={Music}/>
-                    <Route path="/settings" component={Settings}/>
-                    <Route path="/login" component={Login}/>
+                    <Switch>
+                        <Route exact path="/" render={() => <Redirect to={"/profile"}/>}/>
+                        <Route path="/profile/:userId?" component={ProfileContainer}/>
+                        <Route path="/dialogs" render={withSuspense(DialogsContainer)}/>
+                        <Route path="/users" component={UsersContainer}/>
+                        <Route path="/news" component={News}/>
+                        <Route path="/music" component={Music}/>
+                        <Route path="/settings" component={Settings}/>
+                        <Route path="/login" component={Login}/>
+                        <Route path="*" render={()=><div>404 NOT FOUND</div>}/>
+                    </Switch>
                 </div>
             </div>
         )
