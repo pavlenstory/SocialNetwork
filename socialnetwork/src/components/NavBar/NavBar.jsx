@@ -5,25 +5,21 @@ import {NavLink} from "react-router-dom"
 const NavBar = () => {
     return (
         <div className={s.NavBar}>
-            <div className={s.NavBarItem}>
-                <NavLink to={"/profile"} activeClassName={s.active}>Profile</NavLink>
+            <div className={s.NavBarItemWrapper}>
+                <NavLink to={"/profile"} activeClassName={s.active} className={s.NavBarItem}>Profile</NavLink>
             </div>
-            <div className={s.NavBarItem} >
-                <NavLink to={"/dialogs"} activeClassName={s.active}>Messages</NavLink>
+            <div className={s.NavBarItemWrapper}>
+                <NavLink to={"/dialogs"} activeClassName={s.active} className={s.NavBarItem}>Messages</NavLink>
             </div>
-            <div className={s.NavBarItem}>
-                <NavLink to={"/users"} activeClassName={s.active}>Users</NavLink>
+            <div className={s.NavBarItemWrapper}>
+                <NavLink to={"/users"} activeClassName={s.active} className={s.NavBarItem}>Users</NavLink>
             </div>
-            <div className={s.NavBarItem}>
-                <NavLink to={"/news"} activeClassName={s.active}>News</NavLink>
+            <div className={s.NavBarItemWrapper}>
+                <NavLink to={"/news"} activeClassName={s.active} className={s.NavBarItem}>News</NavLink>
             </div>
-            <div className={s.NavBarItem}>
-                <NavLink to={"/music"} activeClassName={s.active}>Music</NavLink>
+            <div className={s.NavBarItemWrapper}>
+                <NavLink to={"/settings"} activeClassName={s.active} className={s.NavBarItem}>Settings</NavLink>
             </div>
-            <div className={s.NavBarItem}>
-                <NavLink to={"/settings"} activeClassName={s.active}>Settings</NavLink>
-            </div>
-
         </div>
     )
 }

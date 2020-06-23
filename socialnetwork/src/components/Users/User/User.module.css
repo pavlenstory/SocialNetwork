@@ -1,16 +1,22 @@
-.selectedPage {
-    color: #1b91ff;
-    font-weight: bold;
-
-}
-
-.Paginator {
-    margin: 30px 0 20px 0;
+.User {
+    float: left;
+    border: 2px solid #080811;
+    max-width: 132px;
+    min-width: 132px;
+    margin: 11px;
+    border-radius: 15px;
     text-align: center;
-    font-size: 18px;
+}
+.UserImage {
+    width: 100px;
+/*    padding: 5px 5px*/
 }
 
-.Paginator button {
+.UserName {
+/*    padding: 5px 5px;*/
+}
+
+.UserButton button {
     color: #fff;
     border: 2px solid #1b91ff;
     background: none;
@@ -23,16 +29,18 @@
     margin: 10px 10px;
 }
 
-.Paginator button:focus {
+
+.UserButton button:focus {
     outline: none;
 }
 
-.Paginator button:hover {
+.UserButton button:hover {
     background-color: #1b91ff;
     text-shadow: -1px 1px #27496d;
 }
 
-.Paginator button:active {
+.UserButton button:active {
     background-color: #27496d;
     text-shadow: -1px 1px #193047;
 }
+

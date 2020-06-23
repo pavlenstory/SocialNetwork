@@ -1,8 +1,8 @@
 import React from "react"
-import s from "./Preloader.module.css"
+import s from "./GlobalPreloader.module.css"
 
 
-const Preloader = () => {
+const GlobalPreloader = () => {
     return (
         <div className={s.Preloader}>
             <div className={s.PreloaderLoader}>
@@ -11,4 +11,4 @@ const Preloader = () => {
     )
 }
 
-export default Preloader;
+export default GlobalPreloader;

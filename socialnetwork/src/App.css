@@ -1,9 +1,11 @@
 .App {
   margin: 0 auto;
-  width: 1200px
+  max-width: 1200px
 }
 .AppCentralContent {
   float: left;
-  width: 900px;
-  background-color: #1a53a1;
+  min-width: 950px;
+  min-height: 600px;
+  background-color: #0f1622;
+  color: white;
 }

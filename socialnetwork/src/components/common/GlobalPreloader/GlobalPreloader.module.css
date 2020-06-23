@@ -1,0 +1,34 @@
+.Preloader {
+    width: 100%;
+    height: 100%;
+    background-color: #0f1622;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PreloaderLoader {
+    width: 70px;
+    height: 70px;
+    border: 6px solid;
+    color: #1b91ff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader{
+    25%{
+        color: #1b91ff;
+    }
+    50%{
+        color: #009900;
+    }
+    75%{
+        color: #FFCC00;
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

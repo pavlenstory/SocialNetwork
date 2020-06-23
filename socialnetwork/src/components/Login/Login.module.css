@@ -1,0 +1,80 @@
+.Form {
+    text-align: center;
+}
+
+.Form h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.Form input[type = "text"],
+.Form input[type = "password"] {
+    font-size: 18px;
+    color: white;
+    border: 2px solid #1b91ff;
+    background: none;
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    transition: 0.25s;
+}
+
+.Form input[type = "text"]:focus,
+.Form input[type = "password"]:focus {
+    width: 300px;
+    border-color: #009900;
+}
+
+.Form input[type = "checkbox"] {
+    display: inline-block;
+}
+
+.Form button {
+    font-size: 18px;
+    color: white;
+    border: 2px solid #009900;
+    background: none;
+    text-align: center;
+    width: 90px;
+    height: 45px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+
+.Form button:hover {
+    background: #009900;
+}
+
+.Form button:active {
+    background-color: #006400;
+}
+
+.Form input[type="checkbox"] {
+    text-align: left;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
+
+
+@-webkit-keyframes autofill {
+    to {
+        color: #666;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}

@@ -1,11 +1,73 @@
 .Header {
-    background-color: red;
-}
-
-.HeaderLogin {
-    float: right;
-}
-
-.HeaderLogin a {
+    background-color: #080811;
+    height: 50px;
     color: white;
 }
+
+.HeaderSocialNameWrapper {
+    float: left;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    font-size: 22px;
+    vertical-align: middle;
+}
+.HeaderSocialName {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.HeaderUserNameWrapper {
+    width: 105px;
+    float: right;
+    font-size: 18px;
+    height: 50px;
+}
+.HeaderUserName {
+    background-color: #1b91ff;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.HeaderLoginWrapper,
+.HeaderLogoutWrapper {
+    width: 95px;
+    float: right;
+    height: 50px;
+}
+.HeaderLogin,
+.HeaderLogout {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.HeaderLoginWrapper button,
+.HeaderLogoutWrapper button {
+    color: #fff;
+    border: 2px solid #1b91ff;
+    background: none;
+    text-align: center;
+    border-radius: 25px;
+    width: 80px;
+    height: 30px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.HeaderLoginWrapper button:focus,
+.HeaderLogoutWrapper button:focus {
+    outline: none;
+}
+
+.HeaderLoginWrapper button:hover,
+.HeaderLogoutWrapper button:hover {
+    background-color: #1b91ff;
+    text-shadow: -1px 1px #27496d;
+}
+
+.HeaderLoginWrapper button:active,
+.HeaderLogoutWrapper button:active {
+    background-color: #27496d;
+    text-shadow: -1px 1px #193047;
+}
+

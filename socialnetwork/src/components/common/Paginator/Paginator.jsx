@@ -17,7 +17,7 @@ let Paginator = ({portionSize, totalUsersCount, pageSize, onPageChanged, current
     let finishedPortionNumber = portionNumber * portionSize;
 
     return (
-        <div>
+        <div className={s.Paginator}>
             {portionNumber > 1 ?
                 <button onClick={() => {setPortionNumber(portionNumber - 1)}}>left</button> : undefined}
             {pages

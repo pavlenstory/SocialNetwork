@@ -1,14 +1,16 @@
 .FormControl.Error input,
 .FormControl.Error textarea {
-    border: 1px solid red;
+    border: 2px solid #CC0000;
 }
 
 .FormControl.Error span {
-    color: red;
+    color: #CC0000
 }
 
 .FormSummaryError {
-    border: 1px solid red;
+    text-align: center;
+    border: 2px solid #CC0000;
     padding: 5px;
-    color: red;
+    color: #CC0000;
 }
+

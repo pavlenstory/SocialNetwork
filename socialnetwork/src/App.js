@@ -3,7 +3,6 @@ import React, {Component} from "react"
 import NavBar from "./components/NavBar/NavBar"
 import {HashRouter, Redirect, Route, Switch, withRouter} from "react-router-dom"
 import News from "./components/News/News"
-import Music from "./components/Music/Music"
 import Settings from "./components/Settings/Settings"
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -12,7 +11,7 @@ import Login from "./components/Login/Login";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./Redux/appReducer";
-import Preloader from "./components/common/Preloader/Preloader";
+import GlobalPreloader from "./components/common/GlobalPreloader/GlobalPreloader";
 import store from "./Redux/ReduxStore";
 import {withSuspense} from "./hoc/withSuspense";
 
@@ -34,7 +33,7 @@ class App extends Component {
 
     render() {
         if (!this.props.initialized) {
-            return <Preloader/>
+            return <GlobalPreloader/>
         }
         return (
             <div className={"App"}>
@@ -47,7 +46,6 @@ class App extends Component {
                         <Route path="/dialogs" render={withSuspense(DialogsContainer)}/>
                         <Route path="/users" component={UsersContainer}/>
                         <Route path="/news" component={News}/>
-                        <Route path="/music" component={Music}/>
                         <Route path="/settings" component={Settings}/>
                         <Route path="/login" component={Login}/>
                         <Route path="*" render={()=><div>404 NOT FOUND</div>}/>

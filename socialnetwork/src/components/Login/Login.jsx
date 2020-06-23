@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import {login} from "../../Redux/authReducer";
 import {Redirect} from "react-router-dom";
 
-
 const Login = ({login, isAuth, captchaUrl}) => {
 
     const onSubmit = (formData) => {
@@ -17,7 +16,7 @@ const Login = ({login, isAuth, captchaUrl}) => {
 
     return (
         <div>
-            <h1>Login</h1>
+
             <LoginReduxForm onSubmit={onSubmit} captchaUrl={captchaUrl} />
         </div>
     )

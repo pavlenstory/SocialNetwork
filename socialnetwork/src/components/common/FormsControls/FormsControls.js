@@ -20,8 +20,8 @@ export const Textarea = Element("textarea");
 export const Input = Element("input");
 
 export const createField = (placeholder, component, name, validate, props = {}, text = "") => (
-    <div>
-        {text}<Field placeholder={placeholder} component={component} name={name}
-                     validate={validate}{...props}/>
-    </div>
+    <>
+        <Field placeholder={placeholder} component={component} name={name}
+               validate={validate}{...props}/><div>{text}</div>
+    </>
 )
