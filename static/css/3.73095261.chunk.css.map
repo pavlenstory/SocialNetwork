@@ -1,1 +1,0 @@
-{"version":3,"sources":["Dialogs.module.css"],"names":[],"mappings":"AAAA,gCACI,UAAW,CACX,wBACJ,CACA,6BACI,UAAW,CACX,wBACJ","file":"3.73095261.chunk.css","sourcesContent":[".DialogsMessages {\r\n    float: left;\r\n    background-color: #1b91ff;\r\n}\r\n.DialogsUsers {\r\n    float: left;\r\n    background-color: gainsboro;\r\n}"]}
