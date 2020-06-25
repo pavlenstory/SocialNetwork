@@ -6,12 +6,9 @@ const Element = (Element) => ({input, meta: {touched, error}, ...props}) => {
     const hasError = touched && error;
     return (
         <div className={s.FormControl + " " + (hasError ? s.Error : undefined)}>
-            <div>
-                <Element {...input} {...props}/>
-            </div>
-            <div>
-                {hasError && <span>{error}</span>}
-            </div>
+            {hasError && <span>{error}</span>}
+            <Element  {...input} {...props}/>
+            {props.text}
         </div>
     )
 }
@@ -22,6 +19,6 @@ export const Input = Element("input");
 export const createField = (placeholder, component, name, validate, props = {}, text = "") => (
     <>
         <Field placeholder={placeholder} component={component} name={name}
-               validate={validate}{...props}/><div>{text}</div>
+               validate={validate}{...props} text={text}/>
     </>
 )

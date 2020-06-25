@@ -12,6 +12,8 @@ let initialState = {
         {message: "First message", id: 1},
         {message: "Second message", id: 2},
         {message: "Third message", id: 3},
+        {message: "Before last", id: 4},
+        {message: "last", id: 5},
     ],
 }
 

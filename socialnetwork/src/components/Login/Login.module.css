@@ -9,7 +9,7 @@
 }
 
 .Form input[type = "text"],
-.Form input[type = "password"] {
+.Form input[type = "password"]{
     font-size: 18px;
     color: white;
     border: 2px solid #1b91ff;
@@ -28,9 +28,6 @@
     border-color: #009900;
 }
 
-.Form input[type = "checkbox"] {
-    display: inline-block;
-}
 
 .Form button {
     font-size: 18px;
@@ -55,9 +52,6 @@
     background-color: #006400;
 }
 
-.Form input[type="checkbox"] {
-    text-align: left;
-}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -77,4 +71,23 @@ input:-webkit-autofill:active {
 input:-webkit-autofill {
     -webkit-animation-name: autofill;
     -webkit-animation-fill-mode: both;
+}
+
+
+.Form .FormCheckBox {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.Form .FormCheckBox input {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.FormCaptcha img{
+    background-color: green;
+    border-radius: 25px;
+    margin-bottom: 30px;
 }

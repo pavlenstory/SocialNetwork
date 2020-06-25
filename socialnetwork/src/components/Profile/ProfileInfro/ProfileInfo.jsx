@@ -3,13 +3,13 @@ import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 import photoAvatar from "./../../../assets/photoAvatar.png"
 import {ProfileDataReduxForm} from "./ProfileDataForm/ProfileDataForm";
-
+import s from "../Profile.module.css"
 
 const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePhoto, updateProfile, profileInfoEditMode}) => {
 
     let [editMode, setEditMode] = useState(false);
 
-    useEffect( () => {
+    useEffect(() => {
         setEditMode(false)
     }, [profileInfoEditMode]);
 
@@ -27,7 +27,7 @@ const ProfileInfo = ({updateUserStatus, userProfile, userStatus, isOwner, savePh
     }
     return (
         <>
-            <div>
+            <div className={s.ProfileInfo}>
                 <img src={userProfile.photos.large ? userProfile.photos.large : photoAvatar}
                      alt={userProfile.fullName}/>
                 {isOwner ? <input type={"file"} onChange={onPhotoSelected}/> : undefined}
@@ -75,7 +75,13 @@ const ProfileData = ({userProfile, isOwner, setEditMode}) => {
     )
 }
 
+
 const Contact = ({contactTitle, contactValue}) => {
+
+    if(contactValue === null || contactValue === "") {
+        return <div></div>
+    }
+
     return <div>
         <div>{contactTitle} :</div>
         <div>{contactValue}</div>

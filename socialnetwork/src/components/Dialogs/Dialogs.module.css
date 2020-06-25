@@ -1,8 +1,66 @@
-.DialogsMessages {
-    float: left;
-    background-color: #1b91ff;
-}
 .DialogsUsers {
+    position: absolute;
+    font-size: 16px;
+    margin: 10px;
     float: left;
-    background-color: gainsboro;
+    border: 2px solid #080811;
+    padding: 10px;
+}
+
+.DialogsUsers a {
+    color: white;
+    text-decoration: none;
+}
+
+.DialogsMessages {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.DialogsForm {
+    text-align: center;
+}
+
+.DialogsForm button {
+    font-size: 17px;
+    color: white;
+    border: 2px solid #009900;
+    background: none;
+    text-align: center;
+    width: 140px;
+    height: 45px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+
+.DialogsForm button:hover {
+    background: #009900;
+}
+
+.DialogsForm button:active {
+    background-color: #006400;
+}
+
+
+.DialogsForm textarea[type = "text"] {
+    font-size: 18px;
+    color: white;
+    border: 2px solid #1b91ff;
+    background: none;
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    transition: 0.25s;
+}
+
+.DialogsForm textarea[type = "text"]:focus {
+    width: 300px;
+    border-color: #009900;
 }

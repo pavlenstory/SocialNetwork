@@ -6,9 +6,8 @@ import User from "./User/User";
 let Users = (props) => {
     return (
         <div>
-            <Paginator {...props}/>
             <User {...props}/>
-
+            <Paginator {...props}/>
         </div>
     )
 }

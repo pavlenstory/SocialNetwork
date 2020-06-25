@@ -5,21 +5,22 @@ import {maxLengthCreator, required} from "../../../utils/validators/validatos";
 import s from "../../common/FormsControls/FormsControls.module.css";
 import style from "../Login.module.css"
 
-const maxLength20 = maxLengthCreator(20);
+const maxLength54 = maxLengthCreator(54);
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit} className={style.Form}>
             <h1>Login</h1>
-            {createField("Login", Input, "email", [required, maxLength20],
+            {createField("Login", Input, "email", [required, maxLength54],
                 {type: "text"})}
-            {createField("Password", Input, "password", [required, maxLength20],
+            {createField("Password", Input, "password", [required, maxLength54],
                 {type: "password"})}
             <div className={style.FormCheckBox}>{createField(null, Input, "rememberMe", null,
-                {type: "checkbox"}, "remember me")}</div>
+                {type: "checkbox"}, "remember me")}
+            </div>
             <div>
-                {captchaUrl && <img src={captchaUrl} alt={captchaUrl}/>}
-                {captchaUrl && createField("Enter Password", Textarea, "captcha", [required],
+                <div className={style.FormCaptcha}>{captchaUrl && <img src={captchaUrl} alt={captchaUrl}/>}</div>
+                {captchaUrl && createField("Enter Captcha", Input, "captcha", [required],
                     {type: "text"})}
             </div>
             <div>

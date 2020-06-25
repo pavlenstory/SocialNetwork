@@ -1,11 +1,12 @@
 .selectedPage {
     color: #1b91ff;
     font-weight: bold;
-
 }
 
 .Paginator {
-    margin: 30px 0 20px 0;
+    margin-top: 20px;
+    width: 100%;
+    float: right;
     text-align: center;
     font-size: 18px;
 }

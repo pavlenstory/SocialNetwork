@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import s from "./User.module.css"
 
 let Users = ({users, followingInProgress, getUnFollow, getFollow}) => {
-    return <div>
+    return <div className={s.UserWrapper}>
         {users.map(u => <div key={u.id}>
                 <div className={s.User}>
             <span >
