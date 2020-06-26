@@ -8,8 +8,7 @@
     font-weight: 500;
 }
 
-.Form input[type = "text"],
-.Form input[type = "password"]{
+.Form input {
     font-size: 18px;
     color: white;
     border: 2px solid #1b91ff;
@@ -22,12 +21,10 @@
     transition: 0.25s;
 }
 
-.Form input[type = "text"]:focus,
-.Form input[type = "password"]:focus {
+.Form input:focus {
     width: 300px;
     border-color: #009900;
 }
-
 
 .Form button {
     font-size: 18px;
@@ -86,7 +83,7 @@ input:-webkit-autofill {
     cursor: pointer;
 }
 
-.FormCaptcha img{
+.FormCaptcha img {
     background-color: green;
     border-radius: 25px;
     margin-bottom: 30px;

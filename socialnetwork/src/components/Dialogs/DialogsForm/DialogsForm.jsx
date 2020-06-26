@@ -8,13 +8,11 @@ const maxLength60 = maxLengthCreator(60);
 
 const DialogsForm = ({handleSubmit}) => {
     return (
-        <>
-            <form onSubmit={handleSubmit} className={s.DialogsForm}>
-                {createField("Message", Textarea, "messageArea", [required, maxLength60],
-                    {type: "text"})}
-                <button>Send message</button>
-            </form>
-        </>
+        <form onSubmit={handleSubmit} className={s.DialogsForm}>
+            {createField("Message", Textarea, "messageArea", [required, maxLength60],
+                {type: "text"})}
+            <button>Send message</button>
+        </form>
     )
 }
 

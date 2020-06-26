@@ -4,7 +4,7 @@
 }
 .AppCentralContent {
   float: left;
-  min-width: 950px;
+  width: 950px;
   min-height: 710px;
   background-color: #0f1622;
   color: white;

@@ -14,6 +14,7 @@ import {initializeApp} from "./Redux/appReducer";
 import GlobalPreloader from "./components/common/GlobalPreloader/GlobalPreloader";
 import store from "./Redux/ReduxStore";
 import {withSuspense} from "./hoc/withSuspense";
+import {ProfileDataReduxForm} from "./components/Profile/ProfileInfro/ProfileDataForm/ProfileDataForm";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 
@@ -48,6 +49,7 @@ class App extends Component {
                         <Route path="/news" component={News}/>
                         <Route path="/settings" component={Settings}/>
                         <Route path="/login" component={Login}/>
+                        {/*<Route path="/change" component={ProfileDataReduxForm}/>*/}
                         <Route path="*" render={()=><div>404 NOT FOUND</div>}/>
                     </Switch>
                 </div>

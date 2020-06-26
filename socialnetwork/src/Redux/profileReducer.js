@@ -10,8 +10,8 @@ const SET_VALUE_PROFILE_EDIT_MODE = "profileReducer/SET_VALUE_PROFILE_EDIT_MODE"
 
 let initialState = {
     posts: [
-        {post: "Hi", id: 1, likesCount: 10},
-        {post: "bla 2", id: 2, likesCount: 20},
+        {post: "First post", id: 1, likesCount: 10},
+        {post: "Second post", id: 2, likesCount: 20},
     ],
     userProfile: null,
     userStatus: "",

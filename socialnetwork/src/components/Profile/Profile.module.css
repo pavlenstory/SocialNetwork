@@ -1,25 +1,146 @@
-.ProfileInfo img{
+.ProfileInfo img {
+    width: 300px;
+    height: 300px;
+    float: left;
     border-radius: 25px;
     margin: 15px;
 }
+
 .ProfileInfo input[type="file"] {
-    padding: 10px;
-    color: white;
-    background: none;
-    border: 2px solid #009900;
-    cursor: pointer;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
-.Form button {
+.ProfileInfo label {
+    position: absolute;
+    margin-top: 275px;
+    color: #fff;
+    border: 2px solid #1b91ff;
+    background: none;
+    text-align: center;
+    border-radius: 25px;
+    transition: 0.25s;
+    cursor: pointer;
+    padding: 7px;
+}
+
+
+.ProfileInfo label:hover {
+    background-color: #1b91ff;
+    text-shadow: -1px 1px #27496d;
+}
+
+.ProfileInfo label:active {
+    background-color: #27496d;
+    text-shadow: -1px 1px #193047;
+}
+
+.Status {
     font-size: 18px;
+    float: left;
+    margin-top: 15px;
+}
+
+.Status input {
+    font-size: 16px;
     color: white;
     border: 2px solid #009900;
     background: none;
     text-align: center;
-    width: 90px;
+    width: 200px;
+    height: 20px;
+    border-radius: 25px;
+    transition: 0.25s;
+}
+
+.ProfileData {
+    height: 290px;
+    font-size: 16px;
+    margin-top: 45px;
+}
+
+.ProfileData span {
+    color: #1b91ff;
+}
+.ProfileData button {
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #1b91ff;
+    background: none;
+    text-align: center;
+    border-radius: 25px;
+    padding: 7px;
+    transition: 0.25s;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.ProfileData button:focus {
+    outline: none;
+}
+
+.ProfileData button:hover {
+    background-color: #1b91ff;
+    text-shadow: -1px 1px #27496d;
+}
+
+.ProfileData button:active {
+    background-color: #27496d;
+    text-shadow: -1px 1px #193047;
+}
+
+.MyPosts {
+    text-align: center;
+}
+.MyPosts h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.MyPosts button {
+    font-size: 17px;
+    color: white;
+    border: 2px solid #009900;
+    background: none;
+    text-align: center;
+    width: 140px;
     height: 45px;
     border-radius: 25px;
     margin-bottom: 30px;
     transition: 0.25s;
     cursor: pointer;
+}
+
+
+.MyPosts button:hover {
+    background: #009900;
+}
+
+.MyPosts button:active {
+    background-color: #006400;
+}
+
+
+.MyPosts textarea {
+    font-size: 18px;
+    color: white;
+    border: 2px solid #1b91ff;
+    background: none;
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    transition: 0.25s;
+}
+
+.MyPosts textarea:focus {
+    width: 300px;
+    border-color: #009900;
 }
