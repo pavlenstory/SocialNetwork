@@ -3,7 +3,7 @@
     border: 2px solid #CC0000;
 }
 
-.FormControl.Error span {
+.FormControl.Error span div {
     font-size: 18px;
     color: #CC0000
 }

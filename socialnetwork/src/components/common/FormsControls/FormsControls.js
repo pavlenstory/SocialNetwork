@@ -6,9 +6,10 @@ const Element = (Element) => ({input, meta: {touched, error}, ...props}) => {
     const hasError = touched && error;
     return (
         <div className={s.FormControl + " " + (hasError ? s.Error : undefined)}>
-            {hasError && <span>{error}</span>}
+            {hasError && <span className={s.ErrorName}><div>{error}</div></span>}
+            {props.beforeText && <span>{props.beforeText}</span>}
             <Element  {...input} {...props}/>
-            {props.text}
+            {props.afterText && <span>{props.afterText}</span>}
         </div>
     )
 }
@@ -16,9 +17,9 @@ const Element = (Element) => ({input, meta: {touched, error}, ...props}) => {
 export const Textarea = Element("textarea");
 export const Input = Element("input");
 
-export const createField = (placeholder, component, name, validate, props = {}, text = "") => (
+export const createField = (placeholder, component, name, validate, props = {}, afterText = "", beforeText = "") => (
     <>
         <Field placeholder={placeholder} component={component} name={name}
-               validate={validate}{...props} text={text}/>
+               validate={validate}{...props} afterText={afterText} beforeText={beforeText}/>
     </>
 )

@@ -28,7 +28,6 @@
     padding: 7px;
 }
 
-
 .ProfileInfo label:hover {
     background-color: #1b91ff;
     text-shadow: -1px 1px #27496d;
@@ -66,6 +65,7 @@
 .ProfileData span {
     color: #1b91ff;
 }
+
 .ProfileData button {
     font-size: 16px;
     color: #fff;
@@ -96,13 +96,14 @@
 .MyPosts {
     text-align: center;
 }
-.MyPosts h1{
+
+.MyPosts h1 {
     color: white;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 20px;
 }
-
+.ProfileDataFormSave button,
 .MyPosts button {
     font-size: 17px;
     color: white;
@@ -116,16 +117,15 @@
     transition: 0.25s;
     cursor: pointer;
 }
-
-
+.ProfileDataFormSave button:hover,
 .MyPosts button:hover {
     background: #009900;
 }
 
+.ProfileDataFormSave button:active,
 .MyPosts button:active {
     background-color: #006400;
 }
-
 
 .MyPosts textarea {
     font-size: 18px;
@@ -143,4 +143,53 @@
 .MyPosts textarea:focus {
     width: 300px;
     border-color: #009900;
+}
+
+
+
+.ProfileDataForm {
+    margin-top: 370px;
+}
+.ProfileDataForm input[type = "checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin-top: 50px;
+}
+
+.ProfileDataForm input[type = "text"],
+.ProfileDataForm textarea[type = "text"]{
+    float: right;
+    font-size: 17px;
+    color: white;
+    border: 2px solid #1b91ff;
+    background: none;
+    text-align: center;
+    width: 220px;
+    height: 110px;
+    border-radius: 25px;
+    transition: 0.25s;
+}
+
+.ProfileDataFormFieldWrapper {
+    width: 345px;
+    height: 140px;
+}
+
+.ProfileDataFormFieldWrapper span {
+    float: left;
+    margin-top: 45px;
+    margin-left: 5px;
+    font-size: 19px;
+}
+
+.ProfileDataFormSave {
+    margin-top: 20px;
+    width: 100%;
+    float: right;
+    text-align: center;
+}
+
+.ProfileDataFormFieldWrapper span div{
+    position: absolute;
+    margin-left: 350px;
 }

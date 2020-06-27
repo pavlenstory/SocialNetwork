@@ -49,7 +49,6 @@ class App extends Component {
                         <Route path="/news" component={News}/>
                         <Route path="/settings" component={Settings}/>
                         <Route path="/login" component={Login}/>
-                        {/*<Route path="/change" component={ProfileDataReduxForm}/>*/}
                         <Route path="*" render={()=><div>404 NOT FOUND</div>}/>
                     </Switch>
                 </div>
