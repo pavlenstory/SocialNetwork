@@ -1,5 +1,5 @@
 import React from "react";
-import {createField, Input, Textarea} from "../../../common/FormsControls/FormsControls";
+import {createField, Input} from "../../../common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../../../utils/validators/validatos";
 import {reduxForm} from "redux-form";
 import s from "../../../common/FormsControls/FormsControls.module.css";

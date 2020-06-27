@@ -14,7 +14,7 @@ import {initializeApp} from "./Redux/appReducer";
 import GlobalPreloader from "./components/common/GlobalPreloader/GlobalPreloader";
 import store from "./Redux/ReduxStore";
 import {withSuspense} from "./hoc/withSuspense";
-import {ProfileDataReduxForm} from "./components/Profile/ProfileInfro/ProfileDataForm/ProfileDataForm";
+
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 

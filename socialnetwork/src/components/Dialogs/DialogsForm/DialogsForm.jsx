@@ -1,6 +1,6 @@
 import React from "react";
-import {Field, reduxForm} from "redux-form";
-import {createField, Input, Textarea} from "../../common/FormsControls/FormsControls";
+import {reduxForm} from "redux-form";
+import {createField, Textarea} from "../../common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validatos";
 import s from "./../Dialogs.module.css"
 

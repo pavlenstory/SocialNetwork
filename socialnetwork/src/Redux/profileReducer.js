@@ -88,7 +88,7 @@ export const updateUserStatus = (userStatus) => async (dispatch) => {
             dispatch(setStatus(userStatus))
         }
     } catch (error) {
-        alert("Think error: " + error)
+        /*alert("Think error: " + error)*/
     }
 }
 
