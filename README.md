@@ -1,2 +1,2 @@
 # SocialNetwork
-[Моя соц сеть](https://pavlenstory.github.io/SocialNetwork/#/users "SocialNetwork")
+[SocialNetwork](https://pavlenstory.github.io/SocialNetwork/#/users "SocialNetwork")
